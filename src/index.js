@@ -21,7 +21,7 @@ export default (options = {}) => (TargetComponent) => (
 
         options.callback = 'googleMapsLoaded'
 
-        options.key = options.key || this.props.key
+        options.key = options.key || this.props.apiKey
 
         const queryString = Object.keys(options).reduce((result, key) => (
           options[key] !== null && options[key] !== undefined
