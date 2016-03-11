@@ -5,9 +5,11 @@ import scriptjs from 'scriptjs'
 
 export default (options = {}) => (TargetComponent) => (
   class extends Component {
+    /*
     state = {
       googleMaps: null,
     }
+    */
 
     componentDidMount() {
       if (typeof window.google === 'undefined') {
