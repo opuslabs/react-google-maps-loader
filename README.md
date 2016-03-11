@@ -18,6 +18,9 @@ The `googleMapsLoader` decorator take an options object in parameter.
 You can specify any parameters Google let you use to load Google Maps API.
 Checkout [Google Maps Javascript API documentation](https://developers.google.com/maps/documentation/javascript/libraries) to specify librairies or others parameters.
 
+Note: If the Google API key isn't specified in the decorator options, the loader will
+use the 'apiKey' prop set on the Component.
+
 ```js
 import React, { Component } from 'react'
 import googleMapsLoader from 'react-google-maps-loader'
