@@ -1,14 +1,16 @@
 /* global google */
 
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import scriptjs from 'scriptjs'
 
 export default (options = {}) => (TargetComponent) => (
   class extends Component {
-    getInitialState() {
-      return {
-        googleMaps: null,
-      }
+    static propTypes = {
+      key: PropTypes.string,
+    }
+
+    state = {
+      googleMaps: null,
     }
 
     componentDidMount() {
