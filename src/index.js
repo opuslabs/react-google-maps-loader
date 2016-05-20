@@ -16,9 +16,11 @@ export default (options = {}) => (TargetComponent) => (
     componentDidMount() {
       if (typeof window.google === 'undefined') {
         if (typeof window.googleMapsLoaded !== 'undefined') {
-          scriptjs.ready('google-maps-places', () => {
+          const oldLoaded = window.googleMapsLoaded
+          window.googleMapsLoaded = () => {
+            oldLoaded()
             this.handleLoaded(google.maps)
-          })
+          }
         } else {
           window.googleMapsLoaded = () => {
             scriptjs.done('google-maps-places')
